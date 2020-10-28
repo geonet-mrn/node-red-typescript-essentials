@@ -1,10 +1,11 @@
 
 # Table of Contents
   - 1.) [What is this?](#1-what-is-this)
-  - 2.) [Installation](#2-installation)
-  - 3.) [Usage](#3-usage)
-  - 4.) [The *nodered-typescript-boilerplate* command line tool](#4-the-nodered-typescript-boilerplate-command-line-tool)
-  - 5.) [Credits and References](#5-credits-and-references)
+  - 2.) [The difference between this package and node-red-contrib-typescript-template (READ THIS!)](#2-the-difference-between-this-package-and-node-red-contrib-typescript-template-read-this)
+  - 3.) [Installation](#3-installation)
+  - 4.) [Usage](#4-usage)
+  - 5.) [The *nodered-typescript-boilerplate* command line tool](#5-the-nodered-typescript-boilerplate-command-line-tool)
+  - 6.) [Credits and References](#6-credits-and-references)
 
 # 1. What is this?
 nodered-typescript-essentials is a collection of TypeScript classes and functions to facilitate the creation of Node-RED extension nodes with TypeScript. 
@@ -13,7 +14,24 @@ Its main component is the `AbstractNode` class. `AbstractNode` is a combination 
 
 `AbstractNode` provides a TypeScript/EcmaScript 6 class syntax based "framework" to write Node-RED nodes in a modern and type-checked way. In addition to this role, `AbstractNode` also provides a couple of additional features which are not available in the original Node-RED API, like, for example, the `getPrevNodes()` and `getNextNodes()` methods. As their names say, these methods retrieve the previous and next nodes (by defined node connections) of a node. These additions simplify and accelerate the development of more advanced node behaviour.
 
-# 2. Installation
+# 2. The difference between this package and node-red-contrib-typescript-template (READ THIS!)
+
+We provide another Node-RED and TypeScript-related npm package named *node-red-contrib-typescript-template* on our GitHub account:
+
+https://github.com/geonet-mrn/node-red-contrib-typescript-template
+
+The two packages are *closely related*, but they do *different things*. Please read this section carefully, it is important to understand in order to make the best use of the two projects and get started quickly and without unnecessary confusion.
+
+*nodered-typescript-essentials*, the package for which you are currently reading the README file, is a library that provides "building blocks" to create Node-RED extensions with TypeScript quickly and easily. However, this library is *NOT a project/package template for a Node-RED extension*. It is meant to be included as a *dependency* in a Node-RED extension package project.
+
+This is where *node-red-typescript-template*, our *other* package, comes into play. node-red-typescript-template *is* an example/template for Node-RED extensions using TypeScript, and it uses *nodered-typescript-essentials* as an external depencency.
+
+The idea behind this is to be able to include *nodered-typescript-essentials* as an external dependency in many different Node-RED extension projects. By keeping the library as an external dependency, it can be developed independently of actual Node-RED extension packages, and the projects that use it can automatically benefit from additions and improvements to it.
+
+
+
+
+# 3. Installation
 
 This package is not yet published on npm as of 2020-10-28.
 
@@ -23,7 +41,7 @@ However, with the following command, you can install this package directly from 
 
 This will install the latest version of the master branch.
 
-# 3. Usage
+# 4. Usage
 
 The development of a Node-RED extension with nodered-typescript-essentials consists of the followings steps:
 
@@ -70,7 +88,7 @@ The development of a Node-RED extension with nodered-typescript-essentials consi
 }
 ```
 
-# 4. The *nodered-typescript-boilerplate* command line tool
+# 5. The *nodered-typescript-boilerplate* command line tool
 
 The package contains a command line tool to automatically generate the TypeScript boilerplate code for a new Node-RED node. The tool itself is written in TypeScript and its compiled JavaScript file is `create-node-boilerplate.js`.
 
@@ -93,7 +111,7 @@ The command line parameter `<name>` (without the angle brackets) specified the n
 
 
 
-# 5. Credits and References
+# 6. Credits and References
 
 This TypeScript library npm package was created following the instructions described here:
 
