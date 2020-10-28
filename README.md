@@ -1,7 +1,7 @@
  
 # How to install and use this package
 
-This package is now yet published on npm as of 2020-10-28.
+This package is not yet published on npm as of 2020-10-28.
 
 However, with the following command, you can install this package directly from GitHub:
 
