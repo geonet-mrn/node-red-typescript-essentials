@@ -1,10 +1,10 @@
 
 # Table of Contents
--  1.) [What is this?](#1-what-is-this)
--  2.) Installation
--  3.) Usage
--  4.) The *nodered-typescript-boilerplate* command line tool
--  5.) Credits and References
+-  1.) [What is this?](#what-is-this)
+-  2.) [Installation](#installation)
+-  3.) [Usage](#usage)
+-  4.) [The *nodered-typescript-boilerplate* command line tool](#the-noderedtypescriptboilerplate-command-line-tool)
+-  5.) [Credits and References](#credits-and-references)
 
 # 1. What is this?
 nodered-typescript-essentials is a collection of TypeScript classes and functions to facilitate the creation of Node-RED extension nodes with TypeScript. 
