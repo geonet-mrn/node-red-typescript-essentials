@@ -1,5 +1,12 @@
- 
-# How to install and use this package
+
+# What is this?
+nodered-typescript-essentials is a collection of TypeScript classes and functions to facilitate the creation of Node-RED extension nodes with TypeScript. 
+
+Its main component is the `AbstractNode` class. `AbstractNode` is a combination of TS type definition, wrapper and extension of Node-RED's JavaScript node module structure. You can find an introduction about how to define a Node-RED node using Node RED's original JavaScript syntax here: https://nodered.org/docs/creating-nodes/first-node .
+
+`AbstractNode` provides a TypeScript/EcmaScript 6 class syntax based "framework" to write Node-RED nodes in a modern and type-checked way. In addition to this role, `AbstractNode` also provides a couple of additional features which are not available in the original Node-RED API, like, for example, the `getPrevNodes()` and `getNextNodes()` methods. As their names say, these methods retrieve the previous and next nodes (by defined node connections) of a node. These additions simplify and accelerate the development of more advanced node behaviour.
+
+# Installation
 
 This package is not yet published on npm as of 2020-10-28.
 
@@ -8,6 +15,9 @@ However, with the following command, you can install this package directly from 
 `npm install geonet-mrn/nodered-typescript-essentials`
 
 This will install the latest version of the master branch.
+
+# Usage
+
 
 
 # The *nodered-typescript-boilerplate* command line tool
