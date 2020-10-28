@@ -1,6 +1,6 @@
 
 # Table of Contents
--  1.) [test](#what-is-this)
+-  1.) [test](#What-is-this?)
 -  2.) Installation
 -  3.) Usage
 -  4.) The *nodered-typescript-boilerplate* command line tool
