@@ -6,7 +6,7 @@
 -  4.) The *nodered-typescript-boilerplate* command line tool
 -  5.) Credits and References
 
-# 1. What is this
+# 1. What is this?
 nodered-typescript-essentials is a collection of TypeScript classes and functions to facilitate the creation of Node-RED extension nodes with TypeScript. 
 
 Its main component is the `AbstractNode` class. `AbstractNode` is a combination of TS type definition, wrapper and extension of Node-RED's JavaScript node module structure. You can find an introduction about how to define a Node-RED node using Node RED's original JavaScript syntax here: https://nodered.org/docs/creating-nodes/first-node .
