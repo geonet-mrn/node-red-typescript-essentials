@@ -1,7 +1,7 @@
 {
   "name": "node-red-typescript-essentials",
   "version": "0.1.0",
-  "description": "A collection of useful TypeScript classes and functions to create Node-RED extensions with TypeScript",  
+  "description": "A collection of useful TypeScript classes and functions to create Node-RED extensions with TypeScript",
   "author": "Sebastian Bechtold",
   "license": "ISC",
   "dependencies": {
