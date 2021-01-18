@@ -14,15 +14,11 @@ var Fill;
     Fill[Fill["blue"] = 3] = "blue";
     Fill[Fill["grey"] = 4] = "grey";
 })(Fill = exports.Fill || (exports.Fill = {}));
-var NodeStatus = /** @class */ (function () {
-    function NodeStatus(text, fill, shape) {
-        if (text === void 0) { text = undefined; }
-        if (fill === void 0) { fill = undefined; }
-        if (shape === void 0) { shape = undefined; }
+class NodeStatus {
+    constructor(text = undefined, fill = undefined, shape = undefined) {
         this.text = text;
         this.fill = fill;
         this.shape = shape;
     }
-    return NodeStatus;
-}());
+}
 exports.NodeStatus = NodeStatus;

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.tryToRead = exports.testFileWrite = exports.stringReplaceAll = exports.formatNumberString = exports.buildUrlPath = void 0;
-var fs = require("fs");
+exports.tryToRead = exports.testFileWrite = exports.stringReplaceAll = exports.sleep = exports.formatNumberString = exports.buildUrlPath = void 0;
+const fs = require("fs");
 function buildUrlPath(part1, part2) {
     if (part1.slice(-1) != "/") {
         part1 += "/";
@@ -9,24 +9,22 @@ function buildUrlPath(part1, part2) {
     return part1 + part2;
 }
 exports.buildUrlPath = buildUrlPath;
-function formatNumberString(value, numDecimals, decimalSeparator, thousandsSeparator) {
-    if (decimalSeparator === void 0) { decimalSeparator = ","; }
-    if (thousandsSeparator === void 0) { thousandsSeparator = "."; }
+function formatNumberString(value, numDecimals, decimalSeparator = ",", thousandsSeparator = ".") {
     if (isNaN(value)) {
         return "";
     }
-    var factor = Math.pow(10, numDecimals);
+    let factor = Math.pow(10, numDecimals);
     value = Math.round(value * factor) / factor;
-    var piece = value.toString();
-    var parts = [piece];
+    let piece = value.toString();
+    let parts = [piece];
     if (piece.includes(".")) {
         parts = piece.split(".");
     }
     // TODO: 3 Explain this regexp. Source?
-    var result = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSeparator);
+    let result = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSeparator);
     if (numDecimals > 0) {
         result += decimalSeparator;
-        var decimalsString = "";
+        let decimalsString = "";
         if (parts.length > 1) {
             decimalsString = parts[1].substring(0, numDecimals);
         }
@@ -37,10 +35,11 @@ function formatNumberString(value, numDecimals, decimalSeparator, thousandsSepar
 exports.formatNumberString = formatNumberString;
 // To be used with "await":
 function sleep(time_ms) {
-    return new Promise(function (resolve) {
+    return new Promise((resolve) => {
         setTimeout(resolve, time_ms);
     });
 }
+exports.sleep = sleep;
 function stringReplaceAll(haystack, needle, newNeedle) {
     // See https://stackoverflow.com/questions/7313395/case-insensitive-replace-all, http://stackoverflow.com/a/3561711/556609
     var esc = needle.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
@@ -60,10 +59,9 @@ function testFileWrite(filePath) {
 }
 exports.testFileWrite = testFileWrite;
 function tryToRead(rootObject, path, fallback) {
-    var pathPieces = path.split('.');
-    var obj = rootObject;
-    for (var _i = 0, pathPieces_1 = pathPieces; _i < pathPieces_1.length; _i++) {
-        var piece = pathPieces_1[_i];
+    let pathPieces = path.split('.');
+    let obj = rootObject;
+    for (let piece of pathPieces) {
         try {
             obj = obj[piece];
         }
