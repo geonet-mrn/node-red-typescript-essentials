@@ -51,7 +51,7 @@ export function formatNumberString(value: number, numDecimals: number, decimalSe
 
 
 // To be used with "await":
-function sleep(time_ms : number) {
+export function sleep(time_ms : number) {
     return new Promise((resolve) => {
         setTimeout(resolve, time_ms);
     });
