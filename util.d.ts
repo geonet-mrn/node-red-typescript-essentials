@@ -3,3 +3,4 @@ export declare function formatNumberString(value: number, numDecimals: number, d
 export declare function stringReplaceAll(haystack: string, needle: string, newNeedle: string): string;
 export declare function testFileWrite(filePath: string): Boolean;
 export declare function tryToRead(rootObject: any, path: string, fallback: any): any;
+export declare function sleep(time_ms : number);
